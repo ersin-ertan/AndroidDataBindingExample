@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!-- data objects are described here-->
+	<data>
+		<!-- testing if import will make the method call getLastname to update the value, didn't work-->
+		<!--<import-->
+		<!--type="com.nullcognition.databindingexample.MainActivity.User_ObservableObject"-->
+		<!--/>-->
+
+		<variable
+			name="userObservableObject"
+			type="com.nullcognition.databindingexample.MainActivity.User_ObservableObject"
+			/>
+		<!-- dont use underscores in the variable name, it wont be fount as a generated method in the main activity setUser_obser...-->
+
+		<variable
+			name="userObservableField"
+			type="com.nullcognition.databindingexample.MainActivity.User_ObservableField"
+			/>
+
+	</data>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:padding="16dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+
+			android:text="@{userObservableObject.firstName}"
+
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+
+			android:text="@{userObservableObject.lastName}"
+
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			/>
+		<!--android:text="@{userObservableObject.getLastName()}"-->
+
+		<!-- observable object did not work with the method call in here, but it did update with the direct object variable.reference-->
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+
+			android:text="@{userObservableField.firstName}"
+
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+
+			android:text="@{userObservableField.lastName}"
+
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			/>
+
+		<Button
+			android:id="@+id/button3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Change Observable LastName Value"/>
+
+	</LinearLayout>
+
+</layout>
