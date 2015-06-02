@@ -6,7 +6,7 @@ public class User{
 
 	public final String firstName; // public vs private with getters both work POJO vs Java Beans
 	public final String lastName; // @{user.lastName} direct variable access or with public getter method
-	// based on variable access scope
+	// based on variable access scope, this is a property reference
 
 	public User(String firstName, String lastName){
 		this.firstName = firstName;

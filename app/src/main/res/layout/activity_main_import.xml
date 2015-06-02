@@ -16,8 +16,18 @@
 
 		<import
 			type="android.graphics.Color"
+		    alias="MyColor"
 			/>
+		<!-- alias for naming conflictions -->
 		<!-- this import allows to use color properties for logic-->
+
+		<import
+			type="android.view.View"
+			/>
+		<variable
+			name="v"
+		    type="View"/>
+		<!-- now the view type and the variable is created -->
 
 	</data>
 
@@ -30,10 +40,25 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 
-			android:background="@{userWithGender.isMale ? Color.BLUE : Color.MAGENTA}"
+			android:background="@{userWithGender.isMale ? MyColor.BLUE : MyColor.MAGENTA}"
 			android:text="@{Capitalizer.capitalize(userWithGender.isMale ? userWithGender.male : userWithGender.female)}"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			/>
+
+		<Button
+			android:id="@+id/button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Defined in MainActivity"/>
+
+		<Button
+			android:id="@+id/button2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Defined in Layout"
+			android:onClick="onClick"
+			/>
+
 		<!--android:background="@android:color/holo_red_light"-->
 		<!-- one way to set the background ^-->
 

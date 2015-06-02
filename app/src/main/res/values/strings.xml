@@ -3,4 +3,12 @@
 
 	<string name="hello_world">Hello world!</string>
 	<string name="action_settings">Settings</string>
+
+	<string-array name="s_array">
+		<item>zero</item>
+		<item>one</item>
+		<item>two</item>
+		<item>three</item>
+		<item>four</item>
+	</string-array>
 </resources>
