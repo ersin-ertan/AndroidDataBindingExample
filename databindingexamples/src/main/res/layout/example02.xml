@@ -10,6 +10,10 @@
 		<import
 			type="com.nullcognition.databindingexamples.examples.Example02.Capi"
 			/>
+		<import
+			type="android.graphics.Color"
+		    alias="ConflictingName"
+		    />
 	</data>
 
 	<LinearLayout
@@ -20,6 +24,7 @@
 
 		<TextView
 			android:text="@{user.getFirstName() == `example02` ? Capi.talize(user.getFirstName()) : `not`}"
+			android:background="@{user.getFirstName() == `example02` ? @android:color/holo_blue_light : ConflictingName.RED}"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceLarge"

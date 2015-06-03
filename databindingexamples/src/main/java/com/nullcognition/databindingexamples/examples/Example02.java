@@ -12,7 +12,7 @@ public class Example02{
 	public Example02(Activity activity){
 		this.activity = activity;
 		Example02Binding binding = DataBindingUtil.setContentView(activity, R.layout.example02);
-		user = new User("example02");
+		user = new User("example02"); // toggle this to see the new color
 		binding.setUser(user);
 	}
 

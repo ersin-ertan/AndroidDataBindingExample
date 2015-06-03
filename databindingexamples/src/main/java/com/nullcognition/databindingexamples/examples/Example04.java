@@ -10,7 +10,6 @@ import com.nullcognition.databindingexamples.R;
 import com.nullcognition.databindingexamples.databinding.Example04Binding;
 
 import java.util.Date;
-import java.util.Random;
 
 public class Example04{
 	User user;
@@ -23,9 +22,7 @@ public class Example04{
 
 		user.setFirstName("example04");
 	}
-	public void changeValues(){
-		user.setFirstName(new Date().toString());
-	}
+	public void changeValues(){user.setFirstName(new Date().toString());}
 
 	public static class User extends BaseObservable{
 		private String firstName;
@@ -39,3 +36,18 @@ public class Example04{
 	}
 
 }
+
+//
+//collection syntax
+//<data>
+//<import type="android.databinding.ObservableMap"/>
+//<variable name="user" type="ObservableMap&lt;String, Object>"/>
+//</data>
+//<TextView
+//android:text='@{user["lastName"]}'
+//		android:layout_width="wrap_content"
+//		android:layout_height="wrap_content"/>
+//<TextView
+//android:text='@{String.valueOf(1 + (Integer)user["age"])}'
+//		android:layout_width="wrap_content"
+//		android:layout_height="wrap_content"/>

@@ -19,6 +19,8 @@ public class ActivityMain extends Activity{
 //		ex03();
 //		ex04();
 
+//		show: Collections syntax in example04.xml,  BaseObserver class
+
 	}
 	private void ex04(){
 		final Example04 example04 = new Example04(this);

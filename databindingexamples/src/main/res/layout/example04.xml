@@ -26,16 +26,3 @@
 
 </layout>
 
-<!--collection syntax-->
-<!--<data>-->
-	<!--<import type="android.databinding.ObservableMap"/>-->
-	<!--<variable name="user" type="ObservableMap&lt;String, Object>"/>-->
-<!--</data>-->
-	<!--<TextView-->
-		<!--android:text='@{user["lastName"]}'-->
-		<!--android:layout_width="wrap_content"-->
-		<!--android:layout_height="wrap_content"/>-->
-	<!--<TextView-->
-		<!--android:text='@{String.valueOf(1 + (Integer)user["age"])}'-->
-		<!--android:layout_width="wrap_content"-->
-		<!--android:layout_height="wrap_content"/>-->
