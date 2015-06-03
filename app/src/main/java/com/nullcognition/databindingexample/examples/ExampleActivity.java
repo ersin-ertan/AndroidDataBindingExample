@@ -60,6 +60,7 @@ public class ExampleActivity extends Activity{
 	private void dataObjectsAndBaseObservable(){
 		Example03DataobjectObservableBinding binding = DataBindingUtil.setContentView(this, R.layout.example03_dataobject_observable);
 		User.DataFieldObservable userDFO = new User.DataFieldObservable();
+
 		binding.setUserDFO(userDFO);
 
 		userDFO.firstName.set("Jack");
