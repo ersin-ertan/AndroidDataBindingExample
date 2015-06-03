@@ -11,4 +11,6 @@
 		<item>three</item>
 		<item>four</item>
 	</string-array>
+	<string name="title_activity_p01">P01Activity</string>
+	<string name="title_activity_example">ExampleActivity</string>
 </resources>

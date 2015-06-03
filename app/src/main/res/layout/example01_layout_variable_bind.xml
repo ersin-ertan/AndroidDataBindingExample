@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!--define the variables/import in the data section-->
+	<data>
+
+		<variable
+			name="userFL"
+			type="com.nullcognition.databindingexample.examples.model.User.FirstLastName"
+			/>
+	</data>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:padding="@android:dimen/app_icon_size">
+
+		<!--user variable is usable with the expression syntax-->
+		<TextView
+			android:text="@{userFL.firstName}"
+
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			/>
+
+		<TextView
+			android:text="@{userFL.lastName}"
+
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			/>
+
+	</LinearLayout>
+
+</layout>

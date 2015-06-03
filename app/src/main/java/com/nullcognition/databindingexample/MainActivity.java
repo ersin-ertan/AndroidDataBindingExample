@@ -2,7 +2,6 @@ package com.nullcognition.databindingexample;
 
 import android.app.Activity;
 import android.databinding.BaseObservable;
-import android.databinding.Bindable;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableField;
 import android.os.Bundle;
@@ -30,39 +29,39 @@ public class MainActivity extends Activity{
 //		bindData();
 //		bindDataWithGenderColorMatching();
 //		customBind();
-		dataObjectsObservables();
+//		dataObjectsObservables();
 	}
 
 	private void dataObjectsObservables(){
-		final User_ObservableObject user_observableObject = new User_ObservableObject();
-		ActivityMainObservableBinding activityMainObservableBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_observable);
-		activityMainObservableBinding.setUserObservableObject(user_observableObject);
-
-		user_observableObject.firstName = "Google";
-		user_observableObject.setLastName("Test");
-		String lastName = user_observableObject.getLastName();
-		Toast.makeText(MainActivity.this, lastName, Toast.LENGTH_SHORT).show();
-
+//		final User_ObservableObject user_observableObject = new User_ObservableObject();
+//		ActivityMainObservableBinding activityMainObservableBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_observable);
+//		activityMainObservableBinding.setUserObservableObject(user_observableObject);
+//
+//		user_observableObject.firstName = "Google";
+//		user_observableObject.setLastName("Test");
+//		String lastName = user_observableObject.getLastName();
+//		Toast.makeText(MainActivity.this, lastName, Toast.LENGTH_SHORT).show();
+//
 
 		// --------------------------------------------------
 
-		// setting the observable field
-		final User_ObservableField user_observableField = new User_ObservableField();
-		activityMainObservableBinding.setUserObservableField(user_observableField);
-		user_observableField.firstName.set("field set first name");
-		user_observableField.lastName.set("field set last name");
-//		user_observableField.numericalValue.set("numerical default");
-
-		Button button = (Button) findViewById(R.id.button3);
-		button.setOnClickListener(new View.OnClickListener(){
-			int i = 0;
-
-			@Override
-			public void onClick(final View v){
-				user_observableObject.setLastName("Button press event update" + ++i);
-//				user_observableField.age.set(i);
-			}
-		});
+//		// setting the observable field
+//		final User_ObservableField user_observableField = new User_ObservableField();
+//		activityMainObservableBinding.setUserObservableField(user_observableField);
+//		user_observableField.firstName.set("field set first name");
+//		user_observableField.lastName.set("field set last name");
+////		user_observableField.numericalValue.set("numerical default");
+//
+//		Button button = (Button) findViewById(R.id.button3);
+//		button.setOnClickListener(new View.OnClickListener(){
+//			int i = 0;
+//
+//			@Override
+//			public void onClick(final View v){
+//				user_observableObject.setLastName("Button press event update" + ++i);
+////				user_observableField.age.set(i);
+//			}
+//		});
 //
 //		user_observableField.age.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback(){
 //			@Override
@@ -141,29 +140,29 @@ public class MainActivity extends Activity{
 		return super.onOptionsItemSelected(item);
 	}
 
-	public static class User_ObservableObject extends BaseObservable{
-
-		private String firstName;
-		private String lastName;
-		// BR class is generated in the module package
-		// annotation generates an entry in the BR class file during compilation
-
-		@Bindable
-		public String getFirstName(){ return this.firstName;}
-
-		@Bindable
-		public String getLastName(){return this.lastName;} // submitted bug report for error in documentation
-		// of repeated method name getFirstName()
-
-		public void setFirstName(String firstName){
-			this.firstName = firstName;
-			notifyPropertyChanged(BR.firstName);
-		}
-		public void setLastName(String lastName){
-			this.lastName = lastName;
-			notifyPropertyChanged(BR.lastName);
-		}
-	}
+//	public static class User_ObservableObject extends BaseObservable{
+//
+//		private String firstName;
+//		private String lastName;
+//		// BR class is generated in the module package
+//		// annotation generates an entry in the BR class file during compilation
+//
+//		@Bindable
+//		public String getFirstName(){ return this.firstName;}
+//
+//		@Bindable
+//		public String getLastName(){return this.lastName;} // submitted bug report for error in documentation
+//		// of repeated method name getFirstName()
+//
+//		public void setFirstName(String firstName){
+//			this.firstName = firstName;
+//			notifyPropertyChanged(BR.firstName);
+//		}
+//		public void setLastName(String lastName){
+//			this.lastName = lastName;
+//			notifyPropertyChanged(BR.lastName);
+//		}
+//	}
 
 }
 

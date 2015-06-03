@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!--define the variables/import in the data section-->
+	<data>
+
+		<variable
+			name="userG"
+			type="com.nullcognition.databindingexample.examples.model.User.Gender"
+			/>
+
+		<import
+			type="com.nullcognition.databindingexample.examples.model.User.MyTextUtil"
+			/>
+	</data>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:padding="@android:dimen/app_icon_size"
+		>
+
+		<!--user variable is usable with the expression syntax-->
+		<!-- note the back ticks for string literal-->
+		<TextView
+			android:background="@{userG.getMale() ? @android:color/holo_blue_light : @android:color/holo_purple}"
+
+			android:text="@{MyTextUtil.toUpper(userG.getMale() ? `John` : userG.jane)}"
+
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			/>
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Switch Gender"
+			android:id="@+id/btn_switchGen"
+			android:onClick="switchGender"/>
+
+	</LinearLayout>
+
+</layout>
